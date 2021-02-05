@@ -1,0 +1,13 @@
+<h2>Horoscopes</h2>
+
+<% @horoscopes.each do |horoscope| %>
+    <p><% horoscope.ascendant %></p>
+    <p><% horoscope.month %></p>
+    <p><% horoscope.content %></p>
+
+    <%= link_to "Journal?", new_horoscope_journal_path(horoscope, horoscope.journals) %>
+<% end %>    
+    
+
+#add images for each ascendant?
+#possibly change month attr to something else or remove
