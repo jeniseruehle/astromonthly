@@ -1,0 +1,13 @@
+<%= form_for @journal do |f| %>
+    <%= f.hidden_field :horoscope_id %>
+    <%= f.collection_select :horoscope_id, Horoscope.all, :id, :name, prompt: true %><br>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+    <%= f.label :description %>
+    <%= f.text_area :description %><br>
+    <%= f.label :mood %>
+    <%= f.text_field :mood %><br>
+
+    <%= f.submit %>
+<% end %>  

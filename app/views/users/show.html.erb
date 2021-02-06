@@ -1,1 +1,8 @@
 <h1>Welcome to AstroMonthly, <%= @user.name %>!</h1>
+
+<p>What would you like to do today?</p>
+
+
+<%= link_to "Go to horoscopes", horoscopes_path %><br>
+<%= link_to "Go to journals", journals_path %><br><br>
+<%= link_to "Log Out", '/logout' %><br>
