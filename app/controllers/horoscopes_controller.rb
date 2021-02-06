@@ -16,6 +16,7 @@ class HoroscopesController < ApplicationController
 
     def horoscope_params
         params.require(:horoscope).permit(:ascendant, :content, :month_id)
+    end
     
 
 end

@@ -1,12 +1,10 @@
 <h2>Horoscopes</h2>
 
-<% @horoscopes.each do |horoscope| %>
-    <p><% horoscope.ascendant %></p>
-    <p><% horoscope.month %></p>
-    <p><% horoscope.content %></p>
-
-    <%= link_to "Journal?", new_horoscope_journal_path(horoscope, horoscope.journals) %>
-<% end %>    
+<ul><% @horoscopes.each do |horoscope| %>
+        <li><% horoscope.ascendant %></p><br>
+        <% horoscope.content %></li><br><br>
+    <% end %>
+</ul>     
     
 
 #add images for each ascendant?

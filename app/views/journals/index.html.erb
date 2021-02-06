@@ -1,7 +1,7 @@
 <h2>Here are your journals: %></h2>
 
 <ul>
-    <%= @journals.each do |journal| %>
-       <li><%= link_to journal.horoscope.title, journal_path(journal) %></li>
+    <% @journals.each do |journal| %>
+       <li><%= link_to "#{journal.title}", journal_path(journal) %></li>
     <% end %>
 </ul>    
