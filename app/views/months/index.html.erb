@@ -1,0 +1,12 @@
+<h1>Horoscopes by Month</h1>
+
+<ul><% @months.each do |month| %>
+    <li><%= month.name %></li>
+        <ul><% month.horoscopes.each do |horoscope| %>
+            <li><a href="<%= horoscope_path(horoscope) %>"><%= horoscope.ascendant %></a></li>
+            <% end %>
+        </ul>
+    <% end %>
+</ul>
+
+#link to current month's horoscopes
