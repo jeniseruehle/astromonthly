@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Horoscope.create!([{
+    ascendant: "Aries", 
+    month: "February", 
+    content: "This month's focus is on community or organizations to which you belong"
+},
+{
+    ascendant: "Libra", 
+    month: "February", 
+    content: "This month's focus is on your creative expression and endeavours"}
+
+    ])

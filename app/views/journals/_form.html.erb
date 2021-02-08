@@ -1,6 +1,6 @@
 <%= form_for @journal do |f| %>
     <%= f.hidden_field :horoscope_id %>
-    <%= f.collection_select :horoscope_id, Horoscope.all, :id, :name, prompt: true %><br>
+    <%= f.collection_select :horoscope_id, Horoscope.all, :id, :month, prompt: true %><br>
 
     <%= f.label :title %>
     <%= f.text_field :title %><br>

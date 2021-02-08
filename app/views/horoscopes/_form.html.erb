@@ -1,5 +1,7 @@
 <%= form_for @horoscope do |f| %>
-
+    
+    <%= f.label :month %>
+    <%= f.text_field :month %><br>
     <%= f.label :ascendant %>
     <%= f.text_field :ascendant %><br>
     <%= f.label :content %>

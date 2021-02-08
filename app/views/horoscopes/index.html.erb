@@ -1,11 +1,10 @@
 <h2>Horoscopes</h2>
 
 <ul><% @horoscopes.each do |horoscope| %>
-        <li><% horoscope.ascendant %></p><br>
-        <% horoscope.content %></li><br><br>
+        <li><b><%= horoscope.ascendant %></b><br>
+        <%= horoscope.content %></li><br><br>
     <% end %>
 </ul>     
     
 
-#add images for each ascendant?
-#possibly change month attr to something else or remove
+#add images for each ascendant

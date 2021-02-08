@@ -1,15 +1,15 @@
-<h1>New Horoscope</h2>
+<h1>New Horoscope</h1>
 
-<% if @horoscope.errors.any? %>
-    <div id="error_explanation">
-        <h2><%= pluralize(@horoscope.errors.count), "error") %>
-        prohibited this horoscope from being saved: </h2>
+# <% if @horoscope.errors.any? %>
+#     <div id="error_explanation">
+#         <h2><%= pluralize(@horoscope.errors.count), "error") %>
+#         prohibited this horoscope from being saved: </h2>
 
-        <ul><% @horoscope.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-        </ul>
-    </div>
-<% end %>    
+#         <ul><% @horoscope.errors.full_messages.each do |msg| %>
+#             <li><%= msg %></li>
+#         <% end %>
+#         </ul>
+#     </div>
+# <% end %>    
 
 <%= render 'form' %> 
