@@ -12,7 +12,7 @@
   <div>
     <% if session[:user_id] %>
       <%= link_to "Home", user_path(session[:user_id]) %> | 
-      <%= link_to "Logout", logout_path, method: :destroy %><br><br>
+      <%= link_to "Logout", logout_path %><br><br>
   </div>
   <% end %>
 
