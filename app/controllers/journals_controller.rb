@@ -14,9 +14,9 @@ class JournalsController < ApplicationController
     end
 
     def create
-        @journal = Journal.create(journal_params)
-        @journal.user_id == current_user
-        if @journal.save
+        @journal = Journal.new(journal_params)
+        @journal.user = current_user
+        if @journal.save!
             redirect_to journal_path(@journal)
         else
             render :new
@@ -29,7 +29,7 @@ class JournalsController < ApplicationController
 
     def update
         @journal = Journal.find_by(id: params[:id])
-        if @journal.user_id == current_user
+        if @journal.user = current_user
             @journal.update(journal_params)
             redirect_to journal_path(@journal)
         else

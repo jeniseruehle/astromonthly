@@ -1,7 +1,11 @@
 <h2>Here are your journals:</h2>
 
+<p><%= link_to "Create new journal?", new_journal_path %></a></p>
+
 <ul>
     <% @journals.each do |journal| %>
-       <li><%= link_to "#{journal.title}", journal_path(journal) %></li>
+       <li><%= journal.horoscope.month %>: <%= link_to "#{journal.title}", journal_path(journal) %></li>
     <% end %>
-</ul>    
+</ul> 
+
+<%= link_to "Horoscopes", horoscopes_path %><br>
