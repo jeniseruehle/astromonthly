@@ -1,9 +1,16 @@
-<h2>February Horoscopes</h2>
+<h2> <% @date = Date.today  %> <%= @date.strftime("%B")%> Horoscopes </h2>
 
-<ul><% @horoscopes.each do |horoscope| %>
-        <li><b><%= horoscope.ascendant %></b><br>
-        <%= horoscope.content %></li><br><br>
+<% if current_user.admin %>
+    <%= link_to "New Horoscope", new_horoscope_path %>
+    <ul>
+    <% @horoscopes.each do |horoscope| %>
+        <li><%= link_to "Show #{horoscope.ascendant}", horoscope_path(horoscope) %></li>
     <% end %>
-</ul>     
-
-#add images for each ascendant
+    </ul>    
+<% else %>
+    <ul><% @horoscopes.each do |horoscope| %>
+            <li><b><%= horoscope.ascendant %></b><br>
+            <%= horoscope.content %></li><br><br>
+        <% end %>
+    </ul>     
+<% end %>

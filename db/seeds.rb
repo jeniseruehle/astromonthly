@@ -20,26 +20,16 @@ Horoscope.create!([
         [ascendant: "Pisces", month: "February", content: "This month highlights closure in your life. This is a great time for any activities involving solitude or spirituality. Are there any subconscious needs that may need attending to? What in your life could benefit from closure?"]
 ])
 
-DATA = {
-    # :user_keys =>
-    #     ["name", "email", "password"],
-    # :users => [
-    #     ["Usagi", moonrabbit@gmail.com , "password"],
-    #     ["Canary", apprenticebutler@gmail.com, "password"],
-    #     ["Utena", roseprince@gmail.com, "password"],
-    # ],
-    :admins => [
-        "Jenise Lacks Ruehle",
-    ]
-    }
+admin=User.new({ name: "Admin", email: 'lacksydaisy@gmail.com', password: 'Topsecretpw123', password_confirmation: 'Topsecretpw123'})
 
+admin.toggle!(:admin)
 
-def main
-    make_admin
-end
-
-def make_admin
-    DATA[:admins].each do |name|
-        User.create(name: name, admin: true, password: 'password')
+if admin.valid?
+    admin.save()
+elsif admin.errors.any?
+    admin.errors.full_messages.each do |msg|
+        puts msg
     end
+else
+    puts "****NOT VALID****"
 end

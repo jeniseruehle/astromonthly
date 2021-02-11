@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-
+    protect_from_forgery with: :exception
+    before_action :require_logged_in, except: [:new, :create, :index]
     helper_method :current_user
 
     private
