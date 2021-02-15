@@ -1,0 +1,11 @@
+<h1>Horoscopes by Month</h1>
+
+<ul>
+    <% @months.each do |month| %>
+        <li><%= month.name %></li>
+        <ul><% month.horoscopes.each do |horoscope| %>
+            <%= link_to "Show #{horoscope.sign}", horoscope_path(horoscope) %></li>
+        <% end %>
+        </ul>
+    <% end %>
+</ul>

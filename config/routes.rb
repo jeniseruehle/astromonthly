@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :horoscopes
   resources :journals
+  resources :months
 
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
