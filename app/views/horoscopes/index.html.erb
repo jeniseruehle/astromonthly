@@ -9,9 +9,11 @@
     </ul>    
 <% else %>
     <ul><% @horoscopes.each do |horoscope| %>
-        <li><%= link_to "Show #{horoscope.sign}", horoscope_path(horoscope) %></li>
+            <% if horoscope.month.name == "February" %>
+            <li><%= horoscope.sign %>: <%= horoscope.content %></li>
+            <% end %>
         <% end %>
     </ul>     
 <% end %>
 
-<%= link_to "Past Horoscopes", months_path %>
+<%= link_to "View Horoscopes by Month", months_path %>
