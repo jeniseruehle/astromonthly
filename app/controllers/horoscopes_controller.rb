@@ -34,6 +34,10 @@ class HoroscopesController < ApplicationController
         redirect_to horoscope_path(@horoscope)
     end
 
+    def most_recent
+        @horoscopes = Horoscope.most_recent
+    end
+
     private
 
     def require_admin
@@ -43,7 +47,7 @@ class HoroscopesController < ApplicationController
     end
 
     def horoscope_params
-        params.require(:horoscope).permit(:ascendant, :content, :month)
+        params.require(:horoscope).permit(:sign, :content, :month_id)
     end
 
 end

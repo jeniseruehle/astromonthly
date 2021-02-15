@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   
   get '/logout' => 'sessions#destroy'
   post '/logout' => 'sessions#destroy'
-  get '/auth/facebook/callback' => 'sessions#create'
+
+  get '/auth/google_oauth2/callback' => 'sessions#GoogleAuth'
+  get 'auth/failure', to: redirect('/')
 end

@@ -4,13 +4,12 @@
     <%= link_to "New Horoscope", new_horoscope_path %>
     <ul>
     <% @horoscopes.each do |horoscope| %>
-        <li><%= link_to "Show #{horoscope.ascendant}", horoscope_path(horoscope) %></li>
+        <li><%= link_to "Show #{horoscope.sign}", horoscope_path(horoscope) %></li>
     <% end %>
     </ul>    
 <% else %>
     <ul><% @horoscopes.each do |horoscope| %>
-            <li><b><%= horoscope.ascendant %></b><br>
-            <%= horoscope.content %></li><br><br>
+        <li><%= link_to "Show #{horoscope.sign}", horoscope_path(horoscope) %></li>
         <% end %>
     </ul>     
 <% end %>

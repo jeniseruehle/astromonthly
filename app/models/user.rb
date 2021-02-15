@@ -5,5 +5,4 @@ class User < ApplicationRecord
 
     has_many :journals
     has_many :horoscopes, through: :journals
-    # accepts_nested_attributes_for :journals
 end

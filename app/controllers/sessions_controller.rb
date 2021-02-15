@@ -14,16 +14,16 @@ class SessionsController < ApplicationController
         end
     end
 
-    # def facebook_login
-    #     if auth
-    #         user = User.find_or_create_by(user_id: auth["user_id"]) do |u|
-    #             u.name = auth["info"]["name"]
-    #             u.email = auth["info"]["email"]
-    #         end
-    #         session[:user_id] = user.id
-    #         redirect_to user_path(user)
-    #     end
-    # end
+    def GoogleAuth
+        access_token = request.env["omniauth.auth"]
+        user = User.from_omniauth(access_token)
+        if user.present?
+            session[:user_id] = user.id
+            redirect_to user_path(user)
+        else
+            redirect_to login_path
+        end
+    end
 
     def destroy
         session.delete(:user_id)
@@ -34,10 +34,6 @@ class SessionsController < ApplicationController
 
     def session_params
         params.require(:user).permit(:name, :email, :password)
-    end
-
-    def auth
-        request.env['omniauth.auth']
     end
 
 end
