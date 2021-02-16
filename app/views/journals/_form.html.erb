@@ -1,6 +1,6 @@
 <%= form_for @journal do |f| %>
     <%= f.hidden_field :horoscope_id %>
-    <%= f.collection_select :horoscope_id, Horoscope.all, :id, :sign, prompt: true %><br><br>
+    <%= f.select :horoscope_id, option_groups_from_collection_for_select(Month.all, :horoscopes, :name, :id, :sign), :include_blank => "Please select..." %><br><br>
 
     <%= f.label :title, 'Sun or Ascendant?' %><br>
     <%= f.text_field :title %><br><br>

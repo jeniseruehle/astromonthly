@@ -4,7 +4,7 @@
 
 <ul>
     <% @journals.each do |journal| %>
-       <li><%= journal.horoscope.month %>: <%= link_to "#{journal.title}", journal_path(journal) %></li>
+       <li><%= journal.horoscope.month.name %>: <%= link_to "#{journal.horoscope.sign} #{journal.title}", journal_path(journal) %></li>
     <% end %>
 </ul> 
 
