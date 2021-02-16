@@ -10,6 +10,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
+            flash[:error] = "Uh oh! Please fill out all fields to create account."
             render :new
         end
     end

@@ -17,6 +17,11 @@
   <% end %>
 
   <body>
+    <div class="wrapper">
+      <% if flash[:error] %>
+      <h2 style="color:red;"><%=flash[:error]%></h2>
+      <% end %>
+      
     <%= yield %>
   </body>
 </html>

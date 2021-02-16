@@ -2,15 +2,6 @@
 
 <%= form_for(@user) do |f| %>
 
-    <% if @user.errors.any? %>
-        <%= pluralize(@user.errors.count, "error")%> prohibited this user from being saved.<br> 
-        <ul>
-            <% @user.errors.full_message.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-        </ul>
-    <% end %>
-
     <div class="form-group">
         <%= f.label "Name" %>
         <%= f.text_field :name, class: "form-control" %>
@@ -24,9 +15,11 @@
     <div class="form-group">
         <%= f.label :password %>
         <%= f.password_field :password, class: "form-control"%>
-    </div><br><br>
+    </div><br>
     
     <div class="form-group">
         <%= f.submit "Create User" %>
     </div>
-<% end %> 
+<% end %><br><br>
+
+<%= link_to "Go back", root_path %>
