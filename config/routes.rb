@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "static#home"
+  match '/auth/:provider/callback' => 'sessions#create_from_facebook', via: [:get, :post]
+
   resources :users
   resources :horoscopes
   resources :journals
@@ -15,7 +17,4 @@ Rails.application.routes.draw do
   
   get '/logout' => 'sessions#destroy'
   post '/logout' => 'sessions#destroy'
-
-  get '/auth/google_oauth2/callback' => 'sessions#GoogleAuth'
-  get '/auth/failure' => 'sessions#new'
 end
