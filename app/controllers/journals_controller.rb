@@ -37,6 +37,11 @@ class JournalsController < ApplicationController
         end
     end
 
+    def most_recent
+        @journals = Journal.most_recent
+    end
+
+
     private
 
     def journal_params

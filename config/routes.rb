@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :horoscopes
-  resources :journals
+  resources :journals do
+    get :most_recent, on: :collection
+    resources :horoscopes, only: [:new, :index, :create]
+  end
   resources :months
 
   get '/signup' => 'users#new'
