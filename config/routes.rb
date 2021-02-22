@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "static#home"
-  match '/auth/:provider/callback' => 'sessions#create_from_facebook', via: [:get, :post]
+  match '/auth/:provider/callback' => 'sessions#create', via: [:get, :post]
 
   resources :users
   resources :horoscopes
