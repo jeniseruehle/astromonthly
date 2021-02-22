@@ -1,5 +1,11 @@
 <div align="center">
-    <h3><%= @horoscope.month.name %></h3>
+    <h2><%= @horoscope.month.name %></h2>
     <p><%= @horoscope.sign %></p>
     <p><%= @horoscope.content %></p>
+
+    <% if current_user.admin %>
+        <%= link_to "Edit Horoscope", edit_horoscope_path(@horoscope) %><br>
+    <% end %>  
+
+    <br><%= link_to "All Horoscopes", horoscopes_path %><br>
 </div>    

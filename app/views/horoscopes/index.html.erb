@@ -1,19 +1,20 @@
-<h1 align="center"> <% @date = Date.today  %> <%= @date.strftime("%B")%> Horoscopes </h1>
+<h1> <% @date = Date.today  %> <%= @date.strftime("%B")%> Horoscopes </h1>
 
-<% if current_user.admin %>
-<p align="center"><%= link_to "New Horoscope", new_horoscope_path %></p>
-    <ul>
-    <% @horoscopes.each do |horoscope| %>
-        <li align="center"><%= link_to "Show #{horoscope.sign}", horoscope_path(horoscope) %></li>
-    <% end %>
-    </ul>    
-<% else %>
-    <ul><% @horoscopes.each do |horoscope| %>
-            <% if horoscope.month.name == "February" %>
-            <li align="center"><%= horoscope.sign %>: <%= horoscope.content %></li>
-            <% end %>
+    <% if current_user.admin %>
+        <p><%= link_to "New Horoscope", new_horoscope_path %></p>
+        <ul>
+        <% @horoscopes.each do |horoscope| %>
+            <li><%= link_to "Show #{horoscope.sign}", horoscope_path(horoscope) %></li>
         <% end %>
-    </ul>     
-<% end %>
+        </ul>    
+    <% else %>
+        <ul><% @horoscopes.each do |horoscope| %>
+                <% if horoscope.month.name == "February" %>
+                <li><h3><%= horoscope.sign %></h3> <%= horoscope.content %></li>
+                <% end %>
+            <% end %>
+        </ul>     
+    <% end %><br>
 
-<p align="center"><%= link_to "View Horoscopes by Month", months_path %></p>
+<%= link_to "View Horoscopes by Month", months_path %>
+  
