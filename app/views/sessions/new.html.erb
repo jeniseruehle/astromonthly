@@ -1,15 +1,12 @@
-<h1>Log In to your AstroMonthly</h1>
+<div align="center">
+    <h1>Log In to your AstroMonthly</h1>
 
-<%= form_tag login_path do %>
-    <%= text_field_tag :email, nil, placeholder: "Enter email" %><br>
+    <%= form_tag login_path do %>
+        <%= text_field_tag :email, nil, placeholder: "Enter email" %><br>
+        <%= password_field_tag :password, nil, placeholder: "Enter password" %><br>
+        <%= submit_tag "Log In" %>
+    <% end %><br>    
 
-    <%= password_field_tag :password, nil, placeholder: "Enter password" %><br>
-
-    <%= submit_tag "Log In" %>
-<% end %><br>    
-
-<%= link_to "Log in with Facebook!", '/auth/facebook', method: :post %>
-
-<br><br>
-
-<%= link_to "Go back", root_path %>
+    <%= link_to "Log in with Facebook!", '/auth/facebook', method: :post %><br><br>
+    <%= link_to "Go back", root_path %>
+</div>    

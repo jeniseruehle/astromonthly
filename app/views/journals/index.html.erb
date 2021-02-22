@@ -1,12 +1,11 @@
-<h2>Here are your journals:</h2>
+<h2 align="center">Here are your journals:</h2>
 
-<p><%= link_to "Create new journal?", new_journal_path %></a></p>
+<p align="center"><%= link_to "Create new journal?", new_journal_path %></a></p>
 
 <ul>
     <% @journals.each do |journal| %>
-       <li><%= journal.horoscope.month.name %>: <%= link_to "#{journal.horoscope.sign} #{journal.title}", journal_path(journal) %></li>
+       <li align="center"><%= journal.horoscope.month.name %>: <%= link_to "#{journal.horoscope.sign} #{journal.title}", journal_path(journal) %></li>
     <% end %>
 </ul> 
 
-<%= link_to "Most Recent Journals", most_recent_journals_path %><br>
-<%= link_to "Horoscopes", horoscopes_path %><br>
+<p align="center"><%= link_to "View Recent Journals", most_recent_journals_path %> &star; <%= link_to "View Horoscopes", horoscopes_path %></p><br>

@@ -1,8 +1,10 @@
-<h1><%= @journal.horoscope.month.name %> 2021</h1>
+<div align="center">
+    <h1><%= @journal.horoscope.month.name %> 2021</h1>
 
-<h3><u><%= @journal.horoscope.sign %> <%= @journal.title %></u></h3>
-<p><%= @journal.description %></p>
-<p>Mood: <%= @journal.mood %></p>
+    <h3><u><%= @journal.horoscope.sign %> <%= @journal.title %></u></h3>
+    <p><%= @journal.description %></p>
+    <p>Mood: <%= @journal.mood %></p>
 
-<%= link_to "Edit Journal", edit_journal_path(@journal) %><br>
-<%= link_to "All Journals", journals_path %><br>
+    <%= link_to "Edit Journal", edit_journal_path(@journal) %><br>
+    <%= link_to "All Journals", journals_path %><br>
+</div>    

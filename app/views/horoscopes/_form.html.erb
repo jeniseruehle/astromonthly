@@ -1,11 +1,13 @@
-<%= form_for @horoscope do |f| %>
-    
-    <%= f.label :month %><br>
-    <%= f.collection_select :month_id, Month.all, :id, :name %><br><br>
-    <%= f.label :sign %><br>
-    <%= f.text_field :sign %><br><br>
-    <%= f.label :content %><br>
-    <%= f.text_area :content %><br><br>
+<div align="center">
+    <%= form_for @horoscope do |f| %>
+        
+        <%= f.label :month %><br>
+        <%= f.collection_select :month_id, Month.all, :id, :name %><br><br>
+        <%= f.label :sign %><br>
+        <%= f.text_field :sign %><br><br>
+        <%= f.label :content %><br>
+        <%= f.text_area :content %><br><br>
 
-    <%= f.submit %>
-<% end %>  
+        <%= f.submit %>
+    <% end %>  
+</div>    

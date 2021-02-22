@@ -1,5 +1,5 @@
-<h1>Your Most Recent Journals</h1>
+<h1 align="center">Your Most Recent Journals</h1>
 
 <% @journals.each do |journal| %>
-    <li><a href="<%= journal_path(journal) %>"><%= "#{journal.horoscope.sign} #{journal.title}" %></a></li>
+    <li align="center"><a href="<%= journal_path(journal) %>"><%= "#{journal.horoscope.sign} #{journal.title}" %></a></li>
 <% end %>    
