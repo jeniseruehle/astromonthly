@@ -11,7 +11,9 @@
 
   <div>
     <% if session[:user_id] %>
-      <%= link_to "Home", user_path(session[:user_id]) %> | 
+      <%= link_to "Home", user_path(session[:user_id]) %> &star; 
+      <%= link_to "Horoscopes", horoscopes_path %> &star; 
+      <%= link_to "Your Journals", journals_path %> &star;
       <%= link_to "Logout", logout_path %><br><br>
   </div>
   <% end %>
@@ -23,5 +25,10 @@
       <% end %>
       
     <%= yield %>
+
+      <footer>
+        <br><small>&copy; 2021 <strong>Astromonthly</strong> &star;
+          <br></div></small>
+      </footer>
   </body>
 </html>
