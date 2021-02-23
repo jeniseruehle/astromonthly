@@ -4,7 +4,7 @@
     <p><%= @horoscope.content %></p>
 
     <% if current_user.admin %>
-        <%= link_to "Edit Horoscope", edit_horoscope_path(@horoscope) %><br>
+        <%= link_to "Edit Horoscope", edit_horoscope_path(@horoscope) %> | <%= link_to "New Horoscope", new_horoscope_path %><br>
     <% end %>  
 
     <br><%= link_to "Back to Horoscopes by Month", months_path %> | <%= link_to "Back to Current Horoscopes", horoscopes_path %><br>
