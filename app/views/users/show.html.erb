@@ -1,16 +1,21 @@
-<h1 align="center">Welcome to AstroMonthly, <%= @user.name %>!</h1>
+<div align="center">
+<h1>Welcome to AstroMonthly, <%= @user.name %>!</h1>
 
-<h2 align="center">What would you like to do today?</h2>
+<h2>What would you like to do today?</h2>
 
-<p align="center"><%= link_to "Go to horoscopes", horoscopes_path %> | <%= link_to "Go to journals", journals_path %></p><br>
+<p><%= link_to "Go to horoscopes", horoscopes_path %> | <%= link_to "Go to journals", journals_path %></p><br>
 
-<p align="center">If you have read horoscopes before, it was likely for your Sun sign...<br>
+<p>If you have read horoscopes before, it was likely for your Sun sign...<br>
 But did you know, you are likely to get a more accurate horoscope reading using your Ascendant sign?<br>
 The Ascendant (also known as your <em>Rising Sign</em>) is the sign that was ascending on the eastern horizon at your exact moment of birth!<br><br>
 
 Not to worry though, you can still read for your Sun sign too - a lot of astrologers even recommend reading for both signs.<br>
 Experiment and see what works for you!<br><Br></p>
  
-<p align="center"><b>To find your sun and rising signs, enter your birth data below:</b></p>
+<p><b>To find your sun and rising signs, enter your birth data below:</b>
+<br><em>Note: If the below widget is not working please visit 
+<a href="https://www.astro.com/cgi/ade.cgi?ract=genchart.cgi&lang=e" target="_blank">Astro.com</a> to run your birth chart.</em></p>
 
- <div align="center"><div id="widget_container"><a id="bc_astro" href="https://astro-charts.com"></a></div><script type="text/javascript" src="https://astro-charts.com/client/common/widget/js/widget-birthchart.min.js"></script></div><br>
+<div id="widget_container"><a id="bc_astro" href="https://astro-charts.com"></a></div><script type="text/javascript" src="https://astro-charts.com/client/common/widget/js/widget-birthchart.min.js"></script> 
+<br>
+ </div>

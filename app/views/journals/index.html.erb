@@ -2,10 +2,8 @@
 
 <p align="center"><%= link_to "Create new journal?", new_journal_path %></a></p>
 
-<ul>
     <% @journals.each do |journal| %>
        <li align="center"><%= journal.horoscope.month.name %>: <%= link_to "#{journal.horoscope.sign} #{journal.title}", journal_path(journal) %></li>
     <% end %>
-</ul> 
 
 <p align="center"><%= link_to "View Recent Journals", most_recent_journals_path %> &star; <%= link_to "View Horoscopes", horoscopes_path %></p><br>
