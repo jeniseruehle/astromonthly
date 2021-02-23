@@ -4,7 +4,9 @@
         <p><%= link_to "New Horoscope", new_horoscope_path %></p>
         <ul>
         <% @horoscopes.each do |horoscope| %>
+            <% if horoscope.month.name == "February" %>
             <li><%= link_to "Show #{horoscope.sign}", horoscope_path(horoscope) %></li>
+            <% end %>
         <% end %>
         </ul>    
     <% else %>

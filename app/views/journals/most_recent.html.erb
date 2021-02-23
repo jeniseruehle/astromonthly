@@ -2,4 +2,6 @@
 
 <% @journals.each do |journal| %>
     <li align="center"><a href="<%= journal_path(journal) %>"><%= "#{journal.horoscope.sign} #{journal.title}" %></a></li>
-<% end %>    
+<% end %><br>
+
+<p align="center"><%= link_to "Back to All Journals", journals_path %></p><br>

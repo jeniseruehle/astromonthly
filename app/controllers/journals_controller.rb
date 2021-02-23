@@ -41,6 +41,10 @@ class JournalsController < ApplicationController
         @journals = Journal.most_recent
     end
 
+    def destroy
+        Journal.find(params[:id]).destroy
+        redirect_to journals_path
+    end
 
     private
 
