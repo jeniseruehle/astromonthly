@@ -1,4 +1,4 @@
-class JournalsController < ApplicationController
+class JournalsController < ApplicationController 
 
     def index
         @journals = current_user.journals
@@ -38,7 +38,7 @@ class JournalsController < ApplicationController
     end
 
     def most_recent
-        @journals = Journal.most_recent
+        @journals = current_user.journals.all.most_recent
     end
 
     def destroy

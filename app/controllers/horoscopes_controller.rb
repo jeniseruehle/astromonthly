@@ -7,7 +7,6 @@ class HoroscopesController < ApplicationController
 
     def show
         @horoscope = Horoscope.find_by(id: params[:id])
-        # @journal = @horoscope.journals.build(user_id: current_user.id)
     end
 
     def new
@@ -25,7 +24,6 @@ class HoroscopesController < ApplicationController
 
     def edit
         @horoscope = Horoscope.find_by(id: params[:id])
-        # @journal = @horoscope.journals.build(user_id: current_user.id)
     end
 
     def update

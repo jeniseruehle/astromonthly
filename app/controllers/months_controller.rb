@@ -3,7 +3,6 @@ class MonthsController < ApplicationController
 
     def index
         @months = Month.all
-        # @horoscopes = Horoscopes.all
     end
 
     def show
