@@ -1,8 +1,12 @@
 class HoroscopesController < ApplicationController
-    before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
+    before_action :require_admin, only: [:new, :create, :edit, :update, :destroy, :current_month]
 
     def index
-        @horoscopes = Horoscope.all
+        if params[:search]
+            @horoscopes = Horoscope.where("content LIKE ?", "%" + params[:search] + "%")
+        else
+            @horoscopes = Horoscope.all
+        end
     end
 
     def show

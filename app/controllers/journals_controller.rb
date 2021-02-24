@@ -38,7 +38,7 @@ class JournalsController < ApplicationController
     end
 
     def most_recent
-        @journals = current_user.journals.all.most_recent
+        @journals = current_user.journals.most_recent
     end
 
     def destroy

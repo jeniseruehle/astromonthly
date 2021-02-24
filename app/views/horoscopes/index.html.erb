@@ -1,17 +1,24 @@
 <h1> <% @date = Date.today  %> <%= @date.strftime("%B")%> Horoscopes </h1>
 
+<%= form_tag('/horoscopes', method: :get) do %>
+    <%= label_tag(:search, "Search Sign Content") %>
+    <%= text_field_tag :search %>
+    <%= submit_tag 'Search' %>
+<% end %>    
+
+
     <% if current_user.admin %>
         <p><%= link_to "New Horoscope", new_horoscope_path %></p>
+    <% if @horoscopes.this_month %>    
         <ul>
         <% @horoscopes.each do |horoscope| %>
-            <% if horoscope.month.name == "February" %>
             <li><%= link_to "Show #{horoscope.sign}", horoscope_path(horoscope) %></li>
             <% end %>
         <% end %>
         </ul>    
     <% else %>
+    <% if @horoscopes.this_month %>
         <ul><% @horoscopes.each do |horoscope| %>
-                <% if horoscope.month.name == "February" %>
                 <li><h3><%= horoscope.sign %></h3> <%= horoscope.content %></li>
                 <% end %>
             <% end %>

@@ -4,4 +4,6 @@ class Horoscope < ApplicationRecord
     belongs_to :month
 
     validates :sign, :content, presence: true
+
+    scope :this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
 end
