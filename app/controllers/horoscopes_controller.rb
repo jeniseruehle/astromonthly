@@ -1,5 +1,5 @@
 class HoroscopesController < ApplicationController
-    before_action :require_admin, only: [:new, :create, :edit, :update]
+    before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
 
     def index
         @horoscopes = Horoscope.all
@@ -30,6 +30,11 @@ class HoroscopesController < ApplicationController
         @horoscope = Horoscope.find_by(id: params[:id])
         @horoscope.update(horoscope_params)
         redirect_to horoscope_path(@horoscope)
+    end
+
+    def destroy
+        Horoscope.find(params[:id]).destroy
+        redirect_to horoscopes_path
     end
 
     private

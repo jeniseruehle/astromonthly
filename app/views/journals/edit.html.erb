@@ -1,3 +1,8 @@
-<%= render 'form' %> 
-<br><div align="center"><%= button_to "Delete Journal", journal_path(@journal), method: :delete,
-data: {confirm: "Are you sure?"}, class: "btn btn-danger" %></div>
+<div align="center">
+    <h1>Edit Journal</h1>
+
+    <%= render 'form' %>
+
+    <br><%= button_to "Delete Journal", journal_path(@journal), method: :delete,
+    data: {confirm: "Are you sure?"}, class: "btn btn-danger" %></p>
+</div>
